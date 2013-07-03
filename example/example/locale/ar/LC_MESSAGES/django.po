@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-23 13:31+0200\n"
+"PO-Revision-Date: 2013-06-23 13:42+0100\n"
+"Last-Translator: Artur Barseghyan <artur.barseghyan@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: settings.py:43
+msgid "English"
+msgstr "Անգլերեն"
+
+#: settings.py:44
+msgid "Armenian"
+msgstr "Հայերեն"
+
+#: settings.py:45
+msgid "Dutch"
+msgstr "Հոլլանդերեն"
+
+#: settings.py:46
+msgid "Russian"
+msgstr "Ռուսերեն"
+
+#: foo/admin.py:29
+msgid "Publication date"
+msgstr "Հրատարակման ամսաթիվ"
+
+#: foo/admin.py:38
+msgid "Additional"
+msgstr "Լրացուցիչ"
+
+#: foo/admin.py:45
+#: foo/models.py:45
+msgid "Foo item"
+msgstr "Foo տարր"
+
+#: foo/models.py:33
+msgid "Title"
+msgstr "Վերնագիր"
+
+#: foo/models.py:34
+msgid "Body"
+msgstr "Մարմին"
+
+#: foo/models.py:35
+msgid "Headline image"
+msgstr "Գլխավոր նկար"
+
+#: foo/models.py:36
+msgid "Date published"
+msgstr "Հրատարակման ամսաթիվը"
+
+#: foo/models.py:37
+msgid "Slug"
+msgstr "Սլագ"
+
+#: foo/models.py:41
+msgid "Date created"
+msgstr "Ստեղծման ամսաթիվ"
+
+#: foo/models.py:42
+msgid "Date updated"
+msgstr "Թարմացման ամսաթիվ"
+
+#: foo/models.py:46
+msgid "Foo items"
+msgstr "Foo տարրեր"
+
+#: foo/models.py:76
+msgid "Image"
+msgstr "Նկար"
+
+#: foo/templates/foo/browse.html:6
+msgid "Foo listing"
+msgstr "Foo տարրերի ցանկ"
+
+#: foo/templates/foo/browse.html:10
+#, python-format
+msgid "List of items for current language: %(current_language_name)s"
+msgstr "Տարրերի ցանկ՝ ընթացիկ լեզվի համար: %(current_language_name)s"
+
+#: foo/templates/foo/detail.html:6
+msgid "Foo detail"
+msgstr "Foo մանրամասնություն"
+
+#: foo/templates/foo/detail.html:13
+msgid "Translations"
+msgstr "Թարգմանություններ"
+
+#: foo/templates/foo/detail.html:22
+msgid "Back to foo home"
+msgstr "Վերադառնալ դեպի foo գլխավոր էջը"
+

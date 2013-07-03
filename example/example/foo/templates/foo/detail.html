@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+    <h1>{% trans "Foo detail" %}</h1>
+
+    <h2>{{ item.title }}</h2>
+    <p>{{ item.body }}</p>
+
+        {% for translation in item.available_translations %}
+            {% if forloop.first %}
+    <h3>{% trans "Translations" %}</h3>
+    <ul>
+            {% endif %}
+        <li><a href="{{ translation.get_absolute_url }}">{{ translation }}</a></li>
+            {% if forloop.last %}
+    </ul>
+            {% endif %}
+        {% endfor %}
+
+    <a href="{% url 'foo.browse' %}">{% trans "Back to foo home" %}</a>
+
+{% endblock content %}

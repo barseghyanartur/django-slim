@@ -1,0 +1,13 @@
+*.py[cod]
+.hgignore~
+.gitignore~
+.hg/
+
+example/db/example.db
+example/tmp/
+builddocs/
+builddocs.zip
+build/
+dist/
+src/django_slim.egg-info
+src/slim/readme.rst

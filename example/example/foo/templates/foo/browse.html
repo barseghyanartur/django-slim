@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load i18n slim_tags %}
+
+{% block content %}
+    <h1>{% trans "Foo listing" %}</h1>
+
+    {% get_current_language as current_language %}
+    {% with current_language|slim_language_name as current_language_name %}
+    <p>{% blocktrans %}List of items for current language: {{ current_language_name }}{% endblocktrans %}</p>
+    {% endwith %}
+
+    <ul>
+        {% for item in items%}
+        <li><a href="{{ item.get_absolute_url }}">{{ item }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock content %}
