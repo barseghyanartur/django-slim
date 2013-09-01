@@ -24,9 +24,9 @@ class FooItem(models.Model, Slim):
     """
     Foo item.
 
-    ``title`` Title of the news item.
-    ``body`` Teaser of the news item. WYSIWYG.
-    ``image`` Headline image of the news item.
+    ``title`` Title of the foo item.
+    ``body`` Teaser of the foo item.
+    ``image`` Headline image of the foo item.
     ``date_published`` Date item is published. On creating defaults to ``datetime.datetime.now``.
     ``language`` Language.
     """

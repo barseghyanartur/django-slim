@@ -9,6 +9,8 @@ Supports `django-localeurl` integration.
 
 Installation
 ===================================
+Note, that Django 1.5 is required. Earlier versions are not supported.
+
 1. Installation
 
 To install latest stable version from pypi:
@@ -32,11 +34,15 @@ Let's now step-by-step review our imaginary example app.
 
 settings.py
 -----------------------------------
+Add `slim` to installed apps.
+
 >>> INSTALLED_APPS = (
 >>>     # ...
 >>>     'slim',
 >>>     # ...
 >>> )
+
+Add languages.
 
 >>> LANGUAGES = (
 >>>     ('en', gettext("English")), # Main language!
@@ -54,7 +60,7 @@ example/models.py
 >>> class FooItem(models.Model, Slim):
 >>>     title = models.CharField(_("Title"), max_length=100)
 >>>     slug = models.SlugField(unique=True, verbose_name=_("Slug"))
->>>     body = HTMLField(_("Body"))
+>>>     body = models.TextField(_("Body"))
 >>>     language = LanguageField()
 
 example/admin.py
@@ -133,10 +139,23 @@ Example (have in mind our `FooItem` model.
 >>>     # Some other code; have in mind previous pieces.
 >>>     @auto_prepend_language
 >>>     def get_absolute_url(self):
->>>         kwargs = {
->>>             'slug': self.slug
->>>             }
+>>>         kwargs = {'slug': self.slug}
 >>>         return reverse('foo.detail', kwargs=kwargs)
+
+Do not forget to add the ``LocaleURLMiddleware`` to the ``MIDDLEWARE_CLASSES`` (as first).
+
+>>> MIDDLEWARE_CLASSES = (
+>>>     'localeurl.middleware.LocaleURLMiddleware',
+>>>     # The rest...
+>>> )
+
+Also, add `localeurl` to ``INSTALLED_APPS``.
+
+>>> INSTALLED_APPS = (
+>>>     # Some apps...
+>>>     'localeurl',
+>>>     # Some more apps...
+>>> )
 
 License
 ===================================

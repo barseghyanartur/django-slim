@@ -1,3 +1,7 @@
+__title__ = 'slim.conf'
+__version__ = '0.5'
+__build__ = 0x000005
+__author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
 __all__ = ('get_setting',)
 
 from django.conf import settings

@@ -6,7 +6,7 @@ try:
 except:
   readme = ''
 
-version = '0.4'
+version = '0.5'
 
 setup(
     name='django-slim',
@@ -26,5 +26,8 @@ setup(
     packages=find_packages(where='./src'),
     url='https://bitbucket.org/barseghyanartur/django-slim',
     license='GPL 2.0/LGPL 2.1',
-    #install_requires=['Django']
+    install_requires = [
+        #'Django>=1.5',
+        'django-localeurl==1.5'
+    ]
 )

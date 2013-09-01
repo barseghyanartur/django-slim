@@ -46,12 +46,10 @@ def detail(request, slug, template_name='foo/detail.html'):
     if language is not None:
         translation.activate(language)
 
-    results_kwargs = {'slug': slug}
-
     try:
-        queryset = FooItem._default_manager.filter(**results_kwargs)
+        item = FooItem._default_manager.all().prefetch_related('translations') \
+                      .select_related('translation_of').get(slug=slug)
 
-        item = queryset.get(**results_kwargs)
     except Exception, e:
         raise Http404
 

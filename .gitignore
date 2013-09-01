@@ -5,9 +5,11 @@
 
 example/db/example.db
 example/tmp/
+example/static/
 builddocs/
 builddocs.zip
 build/
 dist/
 src/django_slim.egg-info
 src/slim/readme.rst
+example/media/foo-images/

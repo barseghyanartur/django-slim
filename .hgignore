@@ -7,8 +7,10 @@ syntax: regexp
 ^example/db/example.db
 ^example/tmp/
 ^builddocs/
+^example/static/
 ^builddocs.zip
 ^build/
 ^dist/
 ^src/django_slim.egg-info
 ^src/slim/readme.rst
+^example/media/foo-images/

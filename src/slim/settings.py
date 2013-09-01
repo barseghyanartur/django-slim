@@ -1,3 +1,7 @@
+__title__ = 'slim.settings'
+__version__ = '0.5'
+__build__ = 0x000005
+__author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
 __all__ = ('USE_LOCALEURL', 'ENABLE_MONKEY_PATCHING')
 
 from slim.conf import get_setting

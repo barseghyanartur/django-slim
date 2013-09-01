@@ -14,13 +14,13 @@ class SlimAdmin(admin.ModelAdmin):
     """
     SlimAdmin.
 
-    ``list_view_primary_only`` - if set to True, onlt primary language items would be shown in the list view. Default
-    value is False.
+    ``list_view_primary_only`` - if set to True, onlt primary language items would be shown in the list
+    view. Default value is False.
 
     ``language_field`` - name of the language field defined in your model. Default value `language`.
 
-    ``auto_add_edit_view`` - if set to True, extra fields for language editing are added to the list view. Do NOT
-    set this value to False!
+    ``auto_add_edit_view`` - if set to True, extra fields for language editing are added to the list view.
+    Do NOT set this value to False!
 
     ``collapse_slim_fieldset`` if set to True, the language fieldset is shown collapsed.
     """
@@ -40,7 +40,10 @@ class SlimAdmin(admin.ModelAdmin):
     collapse_slim_fieldset = True
 
     def queryset(self, *args, **kwargs):
-        queryset = super(SlimAdmin, self).queryset(*args, **kwargs)
+        # For faster admin load we use ``prefetch_related``. Note, that this doesn't work on Django < 1.5.
+        queryset = super(SlimAdmin, self).queryset(*args, **kwargs) \
+                                         .prefetch_related('translations') \
+                                         .select_related('translation_of')
 
         if self.list_view_primary_only is True:
             f = {self.language_field: default_language}
