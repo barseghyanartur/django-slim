@@ -3,5 +3,4 @@ Pillow==2.1.0
 argparse==1.2.1
 django-localeurl==1.5
 six==1.4.1
-wsgiref==0.1.2
 -e git+https://github.com/barseghyanartur/django-slim/@stable#egg=django-slim
