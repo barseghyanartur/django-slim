@@ -1,8 +1,10 @@
-__title__ = 'slim.models'
-__version__ = '0.5'
-__build__ = 0x000005
+__title__ = 'slim.models.__init__'
+__version__ = '0.6'
+__build__ = 0x000006
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
 __all__ = ('Slim', 'SlimBaseModel')
+
+from six import PY2
 
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -76,11 +78,16 @@ class Slim(object):
         :return str:
         """
         if self.translation_of:
+            if PY2:
+                url_title = unicode(self.translation_of)
+            else:
+                url_title = self.translation_of
+
             return admin_change_url(
                 self._meta.app_label,
                 self._meta.module_name,
                 self.translation_of.id,
-                url_title = unicode(self.translation_of)
+                url_title = url_title
                 )
         return ''
     translation_admin.allow_tags = True
@@ -105,12 +112,17 @@ class Slim(object):
             # Processing all available translations. Adding edit links.
             if available_translations:
                 for translation in available_translations:
+                    if PY2:
+                        url_title = unicode(languages[translation.language])
+                    else:
+                        url_title = languages[translation.language]
+
                     output.append(
                         admin_change_url(
                             translation._meta.app_label,
                             translation._meta.module_name,
                             translation.id,
-                            url_title = unicode(languages[translation.language])
+                            url_title = url_title
                             )
                         )
                     languages_keys.remove(translation.language)
@@ -125,11 +137,14 @@ class Slim(object):
                         self._meta.module_name,
                         '?translation_of=%s&amp;language=%s' % (str(original_translation.id), language)
                         )
-                name = unicode(languages[language])
+                if PY2:
+                    name = unicode(languages[language])
+                else:
+                    name = languages[language]
 
                 output.append(u'<a href="%(url)s" style="color:#baa">%(name)s</a>' % {'url': url, 'name': name})
             return u' | '.join(output)
-        except Exception, e:
+        except Exception as e:
             return u''
 
     def available_translations_admin(self, *args, **kwargs):
@@ -178,7 +193,7 @@ class Slim(object):
             return self.original_translation
         try:
             return self.original_translation.translations.get(language=language)
-        except Exception, e:
+        except Exception as e:
             return None
 
 class SlimBaseModel(models.Model, Slim):

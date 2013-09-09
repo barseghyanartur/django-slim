@@ -1,0 +1,1 @@
+-e hg+https://bitbucket.org/barseghyanartur/django-localeurl@stable#egg=localeurl

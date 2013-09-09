@@ -1,6 +1,6 @@
 __title__ = 'slim.templatetags.slim_tags'
-__version__ = '0.5'
-__build__ = 0x000005
+__version__ = '0.6'
+__build__ = 0x000006
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
 __all__ = ('get_translated_object_for', 'get_translated_objects_for', 'set_language', 'multiling_is_enabled',
            'slim_language_name')
@@ -42,7 +42,7 @@ class GetTranslatedObjectForNode(template.Node):
 
         try:
             is_multilingual = obj.is_multilingual
-        except AttributeError, e:
+        except AttributeError as e:
             is_multilingual = False
             raise template.TemplateSyntaxError(
                 _("Invalid usage of ``get_translated_object_for``. Translated object shall be multilingual.")
@@ -130,7 +130,7 @@ class GetTranslatedObjectsForNode(template.Node):
 
         try:
             is_multilingual = obj.is_multilingual
-        except AttributeError, e:
+        except AttributeError as e:
             is_multilingual = False
             raise template.TemplateSyntaxError(
                 _("Invalid usage of get_translated_object_for. Translated object shall be multilingual.")

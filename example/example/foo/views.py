@@ -50,7 +50,7 @@ def detail(request, slug, template_name='foo/detail.html'):
         item = FooItem._default_manager.all().prefetch_related('translations') \
                       .select_related('translation_of').get(slug=slug)
 
-    except Exception, e:
+    except Exception as e:
         raise Http404
 
     context = {'item': item}

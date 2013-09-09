@@ -1,7 +1,7 @@
-wget -O django_slim_example_app.tar.gz http://bitbucket.org/barseghyanartur/django-slim/get/stable.tar.gz
+wget -O django_slim_example_app.tar.gz https://github.com/barseghyanartur/django-slim/archive/stable.zip
 mkdir django_slim_example_app/
 tar -xvf django_slim_example_app.tar.gz -C django_slim_example_app
-cd django_slim_example_app/barseghyanartur-django-slim-464d6d46481e/example/example/
+cd django_slim_example_app/django-slim-stable/example/example/
 pip install Django
 pip install -r ../requirements.txt
 mkdir ../media/

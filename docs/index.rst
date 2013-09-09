@@ -7,6 +7,11 @@ Description
 Simple implementation of multi-lingual models for Django. Django-admin integration works out of the box.
 Supports `django-localeurl` integration.
 
+Prerequisites
+===================================
+- Django 1.5.+
+- Python 2.7.+, 3.3.+
+
 Installation
 ===================================
 Note, that Django 1.5 is required. Earlier versions are not supported.

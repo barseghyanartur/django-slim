@@ -1,6 +1,6 @@
 __title__ = 'slim.models.decorators'
-__version__ = '0.5'
-__build__ = 0x000005
+__version__ = '0.6'
+__build__ = 0x000006
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
 __all__ = ('prepend_language', 'localeurl_prepend_language', 'auto_prepend_language')
 
@@ -32,7 +32,7 @@ try:
     else:
         auto_prepend_language = prepend_language
 
-except ImportError, e:
+except ImportError as e:
     from slim.exceptions import LocaleurlImportError
 
     def localeurl_prepend_language(func, language_field=None):
