@@ -1,4 +1,4 @@
-wget -O django_slim_example_app.tar.gz https://github.com/barseghyanartur/django-slim/archive/stable.zip
+wget -O django_slim_example_app.tar.gz https://github.com/barseghyanartur/django-slim/archive/stable.tar.gz
 mkdir django_slim_example_app/
 tar -xvf django_slim_example_app.tar.gz -C django_slim_example_app
 cd django_slim_example_app/django-slim-stable/example/example/
