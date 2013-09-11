@@ -55,6 +55,13 @@ the `django-slim-example-app-install.sh`.
 
     $ ./django-slim-example-app-install.sh
 
+Go to the front/back -end and test the app.
+
+- Front-end URL: http://127.0.0.1:8000/en/foo/
+- Admin URL: http://127.0.0.1:8000/admin/foo/fooitem/
+- Admin username: admin
+- Password: test
+
 Let's now step-by-step review our imaginary example app.
 
 settings.py
