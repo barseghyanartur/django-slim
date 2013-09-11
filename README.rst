@@ -39,9 +39,9 @@ Usage and examples
 An extensive example project is available at https://github.com/barseghyanartur/django-slim/tree/stable/example
 directory.
 
-Automated example installer
+Demo
 -----------------------------------
-In order to be able to quickly evaluate the django-slim, an automated installer with a demo has been created
+In order to be able to quickly evaluate the django-slim, a demo app (with a quick installer) has been created
 (Debian only). Follow the instructions below for having the demo running within a minute.
 
 Grab the latest `django-slim-example-app-install.sh`
