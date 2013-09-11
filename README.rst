@@ -41,7 +41,8 @@ directory.
 
 Automated example installer
 -----------------------------------
-An automated installer exists as well (Debian only).
+In order to be able to quickly evaluate the django-slim, an automated installer with a demo has been created
+(Debian only). Follow the instructions below for having the demo running within a minute.
 
 Grab the latest `django-slim-example-app-install.sh`
 
@@ -53,8 +54,6 @@ the `django-slim-example-app-install.sh`.
     $ chmod +x django-slim-example-app-install.sh
 
     $ ./django-slim-example-app-install.sh
-
-You would then have a working demo within a minute.
 
 Let's now step-by-step review our imaginary example app.
 
@@ -154,7 +153,7 @@ django-localeurl integration
 -----------------------------------
 Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-django-localeurl integration is fully supported for Python 2.6.* and 2.7.* and installes automatically
+django-localeurl integration is fully supported for Python 2.6.* and 2.7.* and installs automatically
 when installing django-slim. If you are using Python 3, install a forked version of django-localeurl
 (since official version does not yet have support for Python 3).
 
