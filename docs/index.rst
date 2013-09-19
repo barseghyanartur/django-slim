@@ -18,22 +18,49 @@ Note, that Django 1.5 is required. Earlier versions are not supported.
 
 1. Installation
 
-To install latest stable version from pypi:
-
+Latest stable version on PyPI
+-----------------------------------
     $ pip install django-slim
 
-To install latest stable version from source:
+Latest stable version on bitbucket
+-----------------------------------
 
     $ pip install -e hg+https://bitbucket.org/barseghyanartur/django-slim@stable#egg=django-slim
+
+Latest stable version on github
+-----------------------------------
+
+    $ pip install -e git+https://github.com/barseghyanartur/django-slim/@stable#egg=django-slim
 
 2. Add `slim` to ``INSTALLED_APPS`` of you settings module.
 
 Usage and examples
 ===================================
-An extensive example project is available at https://bitbucket.org/barseghyanartur/django-slim/src (see `example`
-directory). An automated installer exists as well (Debian only). Grab the latest `django-slim-example-app-install.sh`
-file from root directory, create a new- or switch to existing- virtual environement and run the
-`django-slim-example-app-install.sh`. You would then have a working demo within a minute.
+An extensive example project is available at https://github.com/barseghyanartur/django-slim/tree/stable/example
+directory.
+
+Demo
+-----------------------------------
+In order to be able to quickly evaluate the django-slim, a demo app (with a quick installer) has been created
+(Debian only). Follow the instructions below for having the demo running within a minute.
+
+Grab the latest `django-slim-example-app-install.sh`
+
+    $ wget https://raw.github.com/barseghyanartur/django-slim/stable/django-slim-example-app-install.sh
+
+Create a new- or switch to existing- virtual environement, assign execute rights to the installer and run
+the `django-slim-example-app-install.sh`.
+
+    $ chmod +x django-slim-example-app-install.sh
+
+    $ ./django-slim-example-app-install.sh
+
+Go to the front/back -end and test the app.
+
+- Front-end URL: http://127.0.0.1:8000/en/foo/
+- Admin URL: http://127.0.0.1:8000/admin/foo/fooitem/
+- Admin username: admin
+- Password: test
 
 Let's now step-by-step review our imaginary example app.
 
@@ -149,8 +176,19 @@ Edit view for translated item:
 
 django-localeurl integration
 -----------------------------------
-django-localeurl integration is supported. Use `slim.models.decorators.auto_prepend_language` decorator
-in order to have it working.
+Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+django-localeurl integration is fully supported for Python 2.6.* and 2.7.* and installs automatically
+when installing django-slim. If you are using Python 3, install a forked version of django-localeurl
+(since official version does not yet have support for Python 3).
+
+Forked version from bitbucket:
+
+    $ pip install -e hg+https://bitbucket.org/barseghyanartur/django-localeurl@stable#egg=localeurl
+
+Integration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Use `slim.models.decorators.auto_prepend_language` decorator in order to have it working.
 
 Example (have in mind our `FooItem` model.
 
@@ -255,7 +293,7 @@ Documentation
     :show-inheritance:
 
 Indices and tables
-==================
+===================================
 
 * :ref:`genindex`
 * :ref:`modindex`

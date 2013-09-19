@@ -1,6 +1,6 @@
 __title__ = 'slim.templatetags.slim_tags'
-__version__ = '0.6'
-__build__ = 0x000006
+__version__ = '0.7'
+__build__ = 0x000007
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
 __all__ = ('get_translated_object_for', 'get_translated_objects_for', 'set_language', 'multiling_is_enabled',
            'slim_language_name')
@@ -276,3 +276,18 @@ def slim_language_name(lang_code):
     :return str:
     """
     return _(get_languages_dict()[lang_code])
+
+
+@register.filter
+def slim_language_local_name(lang_code):
+    """
+    Localised language name.
+
+    :param str lang_code:
+    :return str:
+    """
+    try:
+        return translation.get_language_info(lang_code)['name_local']
+    except:
+        return lang_code
+

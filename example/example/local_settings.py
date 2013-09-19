@@ -26,3 +26,4 @@ EMAIL_FILE_PATH = PROJECT_DIR(os.path.join('..', 'tmp'))
 DEFAULT_FROM_EMAIL = '<no-reply@example.com>'
 
 SLIM_USE_LOCALEURL = True
+SLIM_USE_LOCAL_LANGUAGE_NAMES = True

@@ -1,6 +1,6 @@
 __title__ = 'slim.models.decorators'
-__version__ = '0.6'
-__build__ = 0x000006
+__version__ = '0.7'
+__build__ = 0x000007
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
 __all__ = ('prepend_language', 'localeurl_prepend_language', 'auto_prepend_language')
 

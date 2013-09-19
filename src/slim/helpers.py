@@ -1,13 +1,15 @@
 __title__ = 'slim.helpers'
-__version__ = '0.6'
-__build__ = 0x000006
+__version__ = '0.7'
+__build__ = 0x000007
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
 __all__ = ('get_default_language', 'default_language', 'get_languages', 'get_languages_keys', \
            'get_language_from_request', 'get_languages_dict', 'admin_change_url', 'admin_add_url', 'smart_resolve')
 
 from django.conf import settings
 from django.core.urlresolvers import reverse
+from django.utils.translation import get_language_info
 
+from slim.settings import USE_LOCAL_LANGUAGE_NAMES
 
 def get_default_language():
     """
@@ -25,7 +27,17 @@ def get_languages():
 
     :return iterable:
     """
-    return settings.LANGUAGES
+    if not USE_LOCAL_LANGUAGE_NAMES:
+        return settings.LANGUAGES
+    else:
+        languages = []
+        for lang_code, lang_name in settings.LANGUAGES:
+            try:
+                lang_name = get_language_info(lang_code)['name_local']
+            except Exception as e:
+                pass
+            languages.append((lang_code, lang_name))
+        return languages
 
 
 def get_languages_keys():
@@ -43,7 +55,7 @@ def get_languages_dict():
 
     :return dict:
     """
-    return dict(settings.LANGUAGES)
+    return dict(get_languages())
 
 
 def get_language_from_request(request, default=default_language):
