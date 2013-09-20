@@ -7,7 +7,7 @@ try:
 except:
   readme = ''
 
-version = '0.7'
+version = '0.7.1'
 
 install_requires = [
     'six==1.4.1',
@@ -17,7 +17,7 @@ try:
     PY2 = sys.version_info[0] == 2
     PY3 = sys.version_info[0] == 3
     if PY2:
-        install_requires.append('django-localeurl==1.5')
+        install_requires.append('django-localeurl==2.0.1')
 except:
     pass
 
