@@ -39,7 +39,7 @@ Usage and examples
 An extensive example project is available at https://github.com/barseghyanartur/django-slim/tree/stable/example
 directory.
 
-Screenshots are present in documentation on PythonHosted (http://pythonhosted.org/django-slim/).
+Screenshots are present in documentation on PythonHosted (http://pythonhosted.org/django-slim/#screenshots).
 
 Demo
 -----------------------------------
