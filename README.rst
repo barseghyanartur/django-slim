@@ -39,6 +39,8 @@ Usage and examples
 An extensive example project is available at https://github.com/barseghyanartur/django-slim/tree/stable/example
 directory.
 
+Screenshots are present in documentation on PythonHosted (http://pythonhosted.org/django-slim/).
+
 Demo
 -----------------------------------
 In order to be able to quickly evaluate the django-slim, a demo app (with a quick installer) has been created

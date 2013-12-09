@@ -44,7 +44,7 @@ setup(
     author_email = 'artur.barseghyan@gmail.com',
     package_dir = {'':'src'},
     packages = find_packages(where='./src'),
-    url = 'https://bitbucket.org/barseghyanartur/django-slim',
+    url = 'https://github.com/barseghyanartur/django-slim',
     license = 'GPL 2.0/LGPL 2.1',
     install_requires = install_requires
 )

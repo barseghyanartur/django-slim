@@ -39,6 +39,8 @@ Usage and examples
 An extensive example project is available at https://github.com/barseghyanartur/django-slim/tree/stable/example
 directory.
 
+Screenshots are present in documentation on PythonHosted (http://pythonhosted.org/django-slim/).
+
 Demo
 -----------------------------------
 In order to be able to quickly evaluate the django-slim, a demo app (with a quick installer) has been created
@@ -156,24 +158,6 @@ All available translations for Armenian ``foo``.
 
 See https://bitbucket.org/barseghyanartur/django-slim/src (example) directory for a working example.
 
-List view:
-
-.. image:: _static/list_view.png
-    :width: 960px
-    :align: center
-
-Edit view for main language:
-
-.. image:: _static/edit_view.png
-    :width: 960px
-    :align: center
-
-Edit view for translated item:
-
-.. image:: _static/edit_view_translated_item.png
-    :width: 960px
-    :align: center
-
 django-localeurl integration
 -----------------------------------
 Installation
@@ -218,8 +202,39 @@ Also, add `localeurl` to ``INSTALLED_APPS``.
 >>>     # Some more apps...
 >>> )
 
+License
+===================================
+GPL 2.0/LGPL 2.1
+
+Support
+===================================
+For any issues contact me at the e-mail given in the `Author` section.
+
+Author
+===================================
+Artur Barseghyan <artur.barseghyan@gmail.com>
+
 Documentation
 ===================================
+Screenshots
+-----------------------------------
+List view:
+
+.. image:: _static/list_view.png
+    :width: 960px
+    :align: center
+
+Edit view for main language:
+
+.. image:: _static/edit_view.png
+    :width: 960px
+    :align: center
+
+Edit view for translated item:
+
+.. image:: _static/edit_view_translated_item.png
+    :width: 960px
+    :align: center
 
 :mod:`models` Package
 --------------------
@@ -298,15 +313,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
-License
-===================================
-GPL 2.0/LGPL 2.1
-
-Support
-===================================
-For any issues contact me at the e-mail given in the `Author` section.
-
-Author
-===================================
-Artur Barseghyan <artur.barseghyan@gmail.com>
