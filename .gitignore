@@ -4,6 +4,7 @@
 tox.ini~
 .hg/
 .tox/
+.travis.yml~
 
 example/db/example.db
 example/tmp/

@@ -5,6 +5,7 @@ syntax: regexp
 tox.ini~
 \.git/
 \.tox/
+\.travis\.yml~
 
 ^example/db/example.db
 ^example/tmp/
