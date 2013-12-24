@@ -1,7 +1,9 @@
 *.py[cod]
 .hgignore~
 .gitignore~
+tox.ini~
 .hg/
+.tox/
 
 example/db/example.db
 example/tmp/

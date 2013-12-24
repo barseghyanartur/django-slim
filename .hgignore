@@ -2,7 +2,9 @@ syntax: regexp
 \.pyc$
 \.hgignore~
 \.gitignore~
+tox.ini~
 \.git/
+\.tox/
 
 ^example/db/example.db
 ^example/tmp/
