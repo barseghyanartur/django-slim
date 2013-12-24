@@ -1,8 +1,5 @@
-Package
 ===================================
 django-slim
-
-Description
 ===================================
 Simple implementation of multi-lingual models for Django. Django-admin integration works out of the box.
 Supports `django-localeurl` integration.
@@ -18,17 +15,15 @@ Note, that Django 1.5 is required. Earlier versions are not supported.
 
 1. Installation
 
-Latest stable version on PyPI
------------------------------------
+Latest stable version on PyPI:
+
     $ pip install django-slim
 
-Latest stable version on bitbucket
------------------------------------
+Latest stable version on bitbucket:
 
     $ pip install -e hg+https://bitbucket.org/barseghyanartur/django-slim@stable#egg=django-slim
 
-Latest stable version on github
------------------------------------
+Latest stable version on github:
 
     $ pip install -e git+https://github.com/barseghyanartur/django-slim/@stable#egg=django-slim
 
@@ -39,7 +34,7 @@ Usage and examples
 An extensive example project is available at https://github.com/barseghyanartur/django-slim/tree/stable/example
 directory.
 
-Screenshots are present in documentation on PythonHosted (http://pythonhosted.org/django-slim/).
+Screenshots are present in documentation on PythonHosted (http://pythonhosted.org/django-slim/#screenshots).
 
 Demo
 -----------------------------------
@@ -80,7 +75,7 @@ Add languages.
 
 >>> LANGUAGES = (
 >>>     ('en', gettext("English")), # Main language!
->>>     ('am', gettext("Armenian")),
+>>>     ('hy', gettext("Armenian")),
 >>>     ('nl', gettext("Dutch")),
 >>>     ('ru', gettext("Russian")),
 >>> )
@@ -136,8 +131,8 @@ More on ORM filtering
 Let's assume, we have such record and it has been translated to Armenian (`am`) and Dutch (`nl`). Original
 translation is named `Lorem ipsum`. Other translations have the language code appended to the title.
 
->>> armenian_foo = foo.get_translation_for('am')
-<FooItem: Lorem ipsum AM>
+>>> armenian_foo = foo.get_translation_for('hy')
+<FooItem: Lorem ipsum HY>
 >>> dutch_foo = foo.get_translation_for('nl')
 <FooItem: Lorem ipsum NL>
 
@@ -148,15 +143,15 @@ True
 
 All available translations for ``foo``:
 
->>> foo.available_translations.all()
-[<FooItem: Lorem ipsum AM>, <FooItem: Lorem ipsum NL>]
+>>> foo.available_translations()
+[<FooItem: Lorem ipsum HY>, <FooItem: Lorem ipsum NL>]
 
 All available translations for Armenian ``foo``.
 
->>> armenian_foo.available_translations.all()
+>>> armenian_foo.available_translations()
 [<FooItem: Lorem ipsum>, <FooItem: Lorem ipsum NL>]
 
-See https://bitbucket.org/barseghyanartur/django-slim/src (example) directory for a working example.
+See https://github.com/barseghyanartur/django-slim/tree/stable/example directory for a working example.
 
 django-localeurl integration
 -----------------------------------

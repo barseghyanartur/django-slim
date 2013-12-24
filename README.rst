@@ -1,8 +1,5 @@
-Package
 ===================================
 django-slim
-
-Description
 ===================================
 Simple implementation of multi-lingual models for Django. Django-admin integration works out of the box.
 Supports `django-localeurl` integration.
@@ -78,7 +75,7 @@ Add languages.
 
 >>> LANGUAGES = (
 >>>     ('en', gettext("English")), # Main language!
->>>     ('am', gettext("Armenian")),
+>>>     ('hy', gettext("Armenian")),
 >>>     ('nl', gettext("Dutch")),
 >>>     ('ru', gettext("Russian")),
 >>> )
@@ -134,8 +131,8 @@ More on ORM filtering
 Let's assume, we have such record and it has been translated to Armenian (`am`) and Dutch (`nl`). Original
 translation is named `Lorem ipsum`. Other translations have the language code appended to the title.
 
->>> armenian_foo = foo.get_translation_for('am')
-<FooItem: Lorem ipsum AM>
+>>> armenian_foo = foo.get_translation_for('hy')
+<FooItem: Lorem ipsum HY>
 >>> dutch_foo = foo.get_translation_for('nl')
 <FooItem: Lorem ipsum NL>
 
@@ -146,15 +143,15 @@ True
 
 All available translations for ``foo``:
 
->>> foo.available_translations.all()
-[<FooItem: Lorem ipsum AM>, <FooItem: Lorem ipsum NL>]
+>>> foo.available_translations()
+[<FooItem: Lorem ipsum HY>, <FooItem: Lorem ipsum NL>]
 
 All available translations for Armenian ``foo``.
 
->>> armenian_foo.available_translations.all()
+>>> armenian_foo.available_translations()
 [<FooItem: Lorem ipsum>, <FooItem: Lorem ipsum NL>]
 
-See https://bitbucket.org/barseghyanartur/django-slim/src (example) directory for a working example.
+See https://github.com/barseghyanartur/django-slim/tree/stable/example directory for a working example.
 
 django-localeurl integration
 -----------------------------------

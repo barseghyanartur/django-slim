@@ -41,7 +41,7 @@ TIME_ZONE = 'America/Chicago'
 
 LANGUAGES = (
     ('en', ugettext("English")), # Main language!
-    ('ar', ugettext("Armenian")),
+    ('hy', ugettext("Armenian")),
     ('nl', ugettext("Dutch")),
     ('ru', ugettext("Russian")),
 )
