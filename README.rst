@@ -18,17 +18,15 @@ Note, that Django 1.5 is required. Earlier versions are not supported.
 
 1. Installation
 
-Latest stable version on PyPI
------------------------------------
+Latest stable version on PyPI:
+
     $ pip install django-slim
 
-Latest stable version on bitbucket
------------------------------------
+Latest stable version on bitbucket:
 
     $ pip install -e hg+https://bitbucket.org/barseghyanartur/django-slim@stable#egg=django-slim
 
-Latest stable version on github
------------------------------------
+Latest stable version on github:
 
     $ pip install -e git+https://github.com/barseghyanartur/django-slim/@stable#egg=django-slim
 
