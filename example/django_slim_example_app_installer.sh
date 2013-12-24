@@ -5,7 +5,7 @@ mkdir django_slim_example_app_installer/
 tar -xvf django_slim_example_app_installer.tar.gz -C django_slim_example_app_installer
 cd django_slim_example_app_installer/django-slim-stable/example/example/
 pip install Django==1.5.5
-pip install -r ../example/requirements.txt
+pip install -r ../requirements.txt
 pip install -e git+https://github.com/barseghyanartur/django-slim@stable#egg=django-slim
 mkdir -p ../media/ ../media/static/ ../static/ ../db/ ../logs/ ../tmp/
 cp local_settings.example local_settings.py

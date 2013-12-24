@@ -1,4 +1,4 @@
-Django==1.5.2
+Django==1.5.5
 Pillow==2.1.0
 argparse==1.2.1
 django-localeurl==1.5

@@ -41,21 +41,21 @@ Demo
 In order to be able to quickly evaluate the django-slim, a demo app (with a quick installer) has been created
 (Debian only). Follow the instructions below for having the demo running within a minute.
 
-Grab the latest `django-slim-example-app-install.sh`
+Grab the latest `django_slim_example_app_installer.sh`
 
-    $ wget https://raw.github.com/barseghyanartur/django-slim/stable/django-slim-example-app-install.sh
+    $ wget https://raw.github.com/barseghyanartur/django-slim/stable/example/django_slim_example_app_installer.sh
 
 Create a new- or switch to existing- virtual environement, assign execute rights to the installer and run
 the `django-slim-example-app-install.sh`.
 
-    $ chmod +x django-slim-example-app-install.sh
+    $ chmod +x django_slim_example_app_installer.sh
 
-    $ ./django-slim-example-app-install.sh
+    $ ./django_slim_example_app_installer.sh
 
 Go to the front/back -end and test the app.
 
-- Front-end URL: http://127.0.0.1:8000/en/foo/
-- Admin URL: http://127.0.0.1:8000/admin/foo/fooitem/
+- Front-end URL: http://127.0.0.1:8001/en/foo/
+- Admin URL: http://127.0.0.1:8001/admin/foo/fooitem/
 - Admin username: admin
 - Password: test
 
