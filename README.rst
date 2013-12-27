@@ -128,7 +128,7 @@ More on ORM filtering
 >>> foo = FooItem._default_manager.all()[0]
 <FooItem: Lorem ipsum>
 
-Let's assume, we have such record and it has been translated to Armenian (`am`) and Dutch (`nl`). Original
+Let's assume, we have such record and it has been translated to Armenian (`hy`) and Dutch (`nl`). Original
 translation is named `Lorem ipsum`. Other translations have the language code appended to the title.
 
 >>> armenian_foo = foo.get_translation_for('hy')
