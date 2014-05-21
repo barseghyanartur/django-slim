@@ -14,5 +14,5 @@ builddocs.zip
 build/
 dist/
 src/django_slim.egg-info
-src/slim/readme.rst
+src/slim/README.rst
 example/media/foo-images/

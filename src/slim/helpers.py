@@ -1,7 +1,7 @@
 __title__ = 'slim.helpers'
-__version__ = '0.7'
-__build__ = 0x000007
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
+__copyright__ = 'Copyright (c) 2013-2014 Artur Barseghyan'
+__license__ = 'GPL 2.0/LGPL 2.1'
 __all__ = ('get_default_language', 'default_language', 'get_languages', 'get_languages_keys', \
            'get_language_from_request', 'get_languages_dict', 'admin_change_url', 'admin_add_url', 'smart_resolve')
 
