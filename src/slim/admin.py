@@ -50,6 +50,7 @@ class SlimAdmin(admin.ModelAdmin):
             queryset = queryset.filter(**f)
 
         return queryset
+    get_queryset = queryset
 
     def get_list_display(self, *args, **kwargs):
         list_display = super(SlimAdmin, self).get_list_display(*args, **kwargs)
@@ -84,8 +85,18 @@ class SlimAdmin(admin.ModelAdmin):
 
         return list_filter
 
+    def _django17_declared_fieldsets(self):
+        if self.fieldsets:
+            return self.fieldsets
+        elif self.fields:
+            return [(None, {'fields': self.fields})]
+        return None
+
     def _declared_fieldsets(self, *args, **kwargs):
-        declared_fieldsets = super(SlimAdmin, self)._declared_fieldsets(*args, **kwargs)
+        try:
+            declared_fieldsets = super(SlimAdmin, self)._declared_fieldsets(*args, **kwargs)
+        except AttributeError as e:
+            declared_fieldsets = self._django17_declared_fieldsets(*args, **kwargs)
 
         if self.auto_add_edit_view:
             declared_fieldsets = list(declared_fieldsets)

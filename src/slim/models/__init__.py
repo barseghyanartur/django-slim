@@ -4,7 +4,7 @@ __copyright__ = 'Copyright (c) 2013-2014 Artur Barseghyan'
 __license__ = 'GPL 2.0/LGPL 2.1'
 __all__ = ('Slim', 'SlimBaseModel')
 
-from six import PY2
+from six import PY3
 
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -78,7 +78,7 @@ class Slim(object):
         :return str:
         """
         if self.translation_of:
-            if PY2:
+            if not PY3:
                 url_title = unicode(self.translation_of)
             else:
                 url_title = self.translation_of
@@ -112,7 +112,7 @@ class Slim(object):
             # Processing all available translations. Adding edit links.
             if available_translations:
                 for translation in available_translations:
-                    if PY2:
+                    if not PY3:
                         url_title = unicode(languages[translation.language])
                     else:
                         url_title = languages[translation.language]
@@ -137,7 +137,7 @@ class Slim(object):
                         self._meta.module_name,
                         '?translation_of=%s&amp;language=%s' % (str(original_translation.id), language)
                         )
-                if PY2:
+                if not PY3:
                     name = unicode(languages[language])
                 else:
                     name = languages[language]
