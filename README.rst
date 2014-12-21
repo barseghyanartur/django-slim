@@ -6,7 +6,7 @@ Supports `django-localeurl` integration.
 
 Prerequisites
 ===================================
-- Django 1.5.+
+- Django 1.5, 1.6, 1.7
 - Python 2.7.+, 3.3.+
 
 Installation
