@@ -10,7 +10,7 @@ from django.db import models
 from django.core import exceptions
 from django.utils.translation import ugettext_lazy as _
 
-from slim import get_languages, default_language, get_languages_keys
+from slim.helpers import get_languages, default_language, get_languages_keys
 from slim.settings import ENABLE_MONKEY_PATCHING
 from slim.monkey_patches import monkeypatch_method, monkeypatch_property
 from slim.helpers import admin_change_url, admin_add_url
@@ -19,10 +19,13 @@ class LanguageField(models.CharField):
     """
     LanguageField model. Stores language string in a ``CharField`` field.
 
-    Using `contrib_to_class` melthod adds `translation_of` field, which is simply a ``ForeignKey``
+    Using `contrib_to_class` method adds `translation_of` field, which is simply a ``ForeignKey``
     to the same class.
     """
-    __metaclass__ = models.SubfieldBase
+    """
+	TODO: check that to_python and Field.get_db_value are not needed...
+	__metaclass__ = models.SubfieldBase
+    """
 
     def __init__(self, *args, **kwargs):
         """
@@ -80,7 +83,7 @@ class LanguageField(models.CharField):
 
     def contribute_to_class(self, cls, name):
         """
-        Language field consists of more than one database record. We have ``lanaguage`` (CharField)
+        Language field consists of more than one database record. We have ``language`` (CharField)
         and ``translation_of`` (ForeignKey to ``cls``) in order to identify translated and
         primary objects.
 
