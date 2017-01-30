@@ -9,7 +9,7 @@ from six import PY3
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from slim import get_languages, default_language, get_languages_keys
+from slim.helpers import get_languages, default_language, get_languages_keys
 from slim.translations import is_primary_language
 from slim.helpers import admin_change_url, admin_add_url
 

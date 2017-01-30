@@ -41,7 +41,7 @@ class SlimAdmin(admin.ModelAdmin):
 
     def queryset(self, *args, **kwargs):
         # For faster admin load we use ``prefetch_related``. Note, that this doesn't work on Django < 1.5.
-        queryset = super(SlimAdmin, self).queryset(*args, **kwargs) \
+        queryset = super(SlimAdmin, self).get_queryset(*args, **kwargs) \
                                          .prefetch_related('translations') \
                                          .select_related('translation_of')
 
