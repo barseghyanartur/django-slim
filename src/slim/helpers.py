@@ -1,19 +1,28 @@
 __title__ = 'slim.helpers'
 __author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
-__copyright__ = 'Copyright (c) 2013-2014 Artur Barseghyan'
+__copyright__ = '2013-2017 Artur Barseghyan'
 __license__ = 'GPL 2.0/LGPL 2.1'
-__all__ = ('get_default_language', 'default_language', 'get_languages', 'get_languages_keys', \
-           'get_language_from_request', 'get_languages_dict', 'admin_change_url', 'admin_add_url', 'smart_resolve')
+__all__ = (
+    'get_default_language',
+    'default_language',
+    'get_languages',
+    'get_languages_keys',
+    'get_language_from_request',
+    'get_languages_dict',
+    'admin_change_url',
+    'admin_add_url',
+    'smart_resolve'
+)
 
 from django.conf import settings
 from django.core.urlresolvers import reverse
 from django.utils.translation import get_language_info
 
-from slim.settings import USE_LOCAL_LANGUAGE_NAMES
+from .settings import USE_LOCAL_LANGUAGE_NAMES
+
 
 def get_default_language():
-    """
-    Gets default language.
+    """Get default language.
 
     :return str:
     """
@@ -22,8 +31,7 @@ default_language = get_default_language()
 
 
 def get_languages():
-    """
-    Gets available languages.
+    """Get available languages.
 
     :return iterable:
     """
@@ -41,8 +49,7 @@ def get_languages():
 
 
 def get_languages_keys():
-    """
-    Returns just languages keys.
+    """Return just languages keys.
 
     :return list:
     """
@@ -50,8 +57,7 @@ def get_languages_keys():
 
 
 def get_languages_dict():
-    """
-    Returns just languages dict.
+    """Return just languages dict.
 
     :return dict:
     """
@@ -59,10 +65,9 @@ def get_languages_dict():
 
 
 def get_language_from_request(request, default=default_language):
-    """
-    Gets language from HttpRequest
+    """Get language from HttpRequest.
 
-    :param django.http.HttpRequest:
+    :param django.http.HttpRequest request:
     :param str default:
     :return str:
     """
@@ -72,37 +77,40 @@ def get_language_from_request(request, default=default_language):
         return default
 
 
-def admin_change_url(app_label, module_name, object_id, extra_path='', url_title=None):
-    """
-    Gets an admin change URL for the object given.
+def admin_change_url(app_label, module_name, object_id, extra_path='',
+                     url_title=None):
+    """Get an admin change URL for the object given.
 
     :param str app_label:
     :param str module_name:
     :param int object_id:
     :param str extra_path:
-    :param str url_title: If given, an HTML a tag is returned with `url_title` as the tag title. If left to None
-        just the URL string is returned.
+    :param str url_title: If given, an HTML a tag is returned with
+        ``url_title`` as the tag title. If left to None just the URL string
+        is returned.
     :return str:
     """
     try:
-        url = reverse('admin:%s_%s_change' %(app_label, module_name), args=[object_id]) + extra_path
+        url = reverse(
+            'admin:%s_%s_change' % (app_label, module_name), args=[object_id]
+        ) + extra_path
         if url_title:
-            return u'<a href="%s">%s</a>' %(url, url_title)
+            return u'<a href="%s">%s</a>' % (url, url_title)
         else:
             return url
     except:
-        return None
+        pass
 
 
 def admin_add_url(app_label, module_name, extra_path='', url_title=None):
-    """
-    Gets an admin edit URL for the object given.
+    """Get an admin edit URL for the object given.
 
     :param str app_label:
     :param str module_name:
     :param str extra_path:
-    :param str url_title: If given, an HTML a tag is returned with `url_title` as the tag title. If left to None
-        just the URL string is returned.
+    :param str url_title: If given, an HTML a tag is returned with \
+        ``url_title`` as the tag title. If left to None just the URL
+        string is returned.
     :return str:
     """
     try:
@@ -112,14 +120,13 @@ def admin_add_url(app_label, module_name, extra_path='', url_title=None):
         else:
             return url
     except:
-        return None
+        pass
 
 
 def smart_resolve(var, context):
-    """
-    Resolves variable from context in a smart way. First trying to resolve from context
-    and when result is None checks if variable is not None and returns just variable
-    when not. Otherwise returns None.
+    """Resolve variable from context in a smart way. First trying to resolve
+    from context and when result is None checks if variable is not None and
+    return just variable when not. Otherwise return None.
 
     :param str var:
     :param Context context:

@@ -7,10 +7,10 @@ try:
 except:
   readme = ''
 
-version = '0.7.5'
+version = '0.8'
 
 install_requires = [
-    'six>=1.4.1',
+    'six>=1.9.1',
 ]
 
 try:
@@ -22,29 +22,32 @@ except:
     pass
 
 setup(
-    name = 'django-slim',
-    version = version,
-    description = ("Simple implementation of multi-lingual models for Django."),
-    long_description = readme,
-    classifiers = [
+    name='django-slim',
+    version=version,
+    description="Simple implementation of multi-lingual models for Django.",
+    long_description=readme,
+    classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.3",
+        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.6",
         "Environment :: Web Environment",
         "Framework :: Django",
         "Intended Audience :: Developers",
         "Operating System :: OS Independent",
         "Development Status :: 4 - Beta",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
-        "License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)",
+        "License :: OSI Approved :: GNU Lesser General Public License v2 or "
+        "later (LGPLv2+)",
     ],
-    keywords = 'multi-lingual, django, python',
-    author = 'Artur Barseghyan',
-    author_email = 'artur.barseghyan@gmail.com',
-    package_dir = {'':'src'},
-    packages = find_packages(where='./src'),
-    url = 'https://github.com/barseghyanartur/django-slim',
-    license = 'GPL 2.0/LGPL 2.1',
-    install_requires = install_requires
+    keywords='multi-lingual, django, python',
+    author='Artur Barseghyan',
+    author_email='artur.barseghyan@gmail.com',
+    package_dir={'': 'src'},
+    packages=find_packages(where='./src'),
+    url='https://github.com/barseghyanartur/django-slim',
+    license='GPL 2.0/LGPL 2.1',
+    install_requires=install_requires
 )

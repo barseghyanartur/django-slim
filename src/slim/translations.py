@@ -1,17 +1,21 @@
-__title__ = 'slim.translations'
-__author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
-__copyright__ = 'Copyright (c) 2013-2014 Artur Barseghyan'
-__license__ = 'GPL 2.0/LGPL 2.1'
-__all__ = ('short_language_code', 'is_primary_language')
-
 from django.utils import translation
 
-from slim.helpers import default_language
+from .helpers import default_language
+
+__title__ = 'slim.translations'
+__author__ = 'Artur Barseghyan <artur.barseghyan@gmail.com>'
+__copyright__ = '2013-2017 Artur Barseghyan'
+__license__ = 'GPL 2.0/LGPL 2.1'
+__all__ = (
+    'short_language_code',
+    'is_primary_language'
+)
 
 
 def short_language_code(code=None):
-    """
-    Extracts the short language code from its argument (or return the default language code).
+    """Extract the short language code from its argument
+
+    Or return the default language code.
 
     :param str code:
     :return str:
@@ -32,9 +36,11 @@ def short_language_code(code=None):
 
 
 def is_primary_language(language=None):
-    """
-    Returns true if current or passed language is the primary language for this site.
-    (The primary language is defined as the first language in settings.LANGUAGES.)
+    """Return true if current or passed language is the primary language.
+
+    Return true if current or passed language is the primary language for the
+    site (the primary language is defined as the first language in
+    settings.LANGUAGES).
 
     :param str language:
     :return bool:
