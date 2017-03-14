@@ -4,6 +4,9 @@ django-slim
 Simple implementation of multi-lingual models for Django. Django-admin
 integration works out of the box.
 
+**Support discontinued**. There are many better `alternatives available
+<https://djangopackages.org/grids/g/model-translation/>`_.
+
 Prerequisites
 =============
 - Django 1.5, 1.6, 1.7
